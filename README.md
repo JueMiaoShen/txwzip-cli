@@ -2,13 +2,13 @@
 
 ## 安装说明
 
-`npm install txzip-cli -g`
+`npm install txwzip-cli -g`
 
 
 ## 快速使用
 
 ```js
-  :> txzip-cli name=MM  dir=./dd/  out=publish version=正式
+  :> txwzip-cli name=MM  dir=./dd/  out=publish version=正式
 ```
 
 ## 参数说明: 
@@ -21,7 +21,9 @@
 | version          |  是    |     String          |  版本号      |
 
 
-
+```环境变量
+#!/usr/bin/env node
+```
      
       
       

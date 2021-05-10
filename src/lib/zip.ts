@@ -9,8 +9,7 @@ const archiver = require('archiver');
 
 
 const getArgvData=(dataArray:Array<any>)=>{
-        console.log("命令行:zip-cli name=ydl  dir=./dd/  out=publish version=正式")
-        console.log(dataArray);
+        console.log("command:> txwzip-cli name=fileName  dir=./dd/  out=publish version=正式")
         let processArgv:any={};
         for (let i in dataArray){
             let a=dataArray[i];
@@ -18,24 +17,23 @@ const getArgvData=(dataArray:Array<any>)=>{
                 processArgv[a.substring(0,a.indexOf("="))]=a.substring(a.indexOf("=")+1);
             }
         };
-        console.log(processArgv);
         return processArgv
 }
 
 const zip=(processArgv:processArgvType)=>{
  console.log(processArgv);
     if(!processArgv.name){
-        console.error("请输入压缩后文件名，格式：name:fileName");
+        console.error("请输入压缩后文件名，格式：txwzip-cli name=fileName  dir=./dd/  out=publish version=正式");
         return
     }
 
     if(!processArgv.dir){
-        console.error("请输入要压缩的目录，格式：dir:dirName");
+        console.error("请输入要压缩的目录，格式：txwzip-cli name=fileName  dir=./dd/  out=publish version=正式");
         return
     }
 
     if(!processArgv.out){
-        console.error("请输入要输出到目录，格式：out:outName");
+        console.error("请输入要输出到目录，格式：txwzip-cli name=fileName  dir=./dd/  out=publish version=正式");
         return
 
     }
@@ -110,7 +108,6 @@ const zip=(processArgv:processArgvType)=>{
 
 export const execZip=()=>{
     let agrvs=process.argv
-    console.log(agrvs);
     zip(getArgvData(agrvs))
 }
 
