@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+<div>
+  <div id="test">
+    测试测试
+    <div id="appA"></div>
+  </div>
+</div>
+</body>
+
+<script>
+const test=()=>{
+  CYH5SDK.wxJsSDKConfig(false)
+}
+test();
+let t=document.getElementById('test');
+CYH5SDK.test();
+t.addEventListener('click',function (e) {
+      /*CYH5SDK.wxH5OpenMiniProgram({
+        id:'appA', // 是 组件挂载的domId
+        title:'打开小程序',// 按钮标题
+        username:'gh_6c0e9849d57a',//	是		所需跳转的小程序原始id，即小程序对应的以gh_开头的id
+        path:'pages/web/web.html'
+      })*/
+      CYH5SDK.appH5ShareButton({
+        title: '测试',              //分享到WX,QQ...标题
+        description:"测试",        //分享WX,QQ...描述
+        logo: '',               //分享WX,QQ...的缩略图的logo
+        link: window.location.href,               //分享WX,QQ...的链接
+
+      })
+})
+</script>
+
+</html>
